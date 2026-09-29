@@ -7,11 +7,16 @@ compatibility_date = "2024-09-23"
 [vars]
 ALLOWED_ORIGINS = "https://infradev.pages.dev,http://localhost:8788"
 
-# Secrets (Firebase Admin service account, etc.) are NOT set here.
-# Set them with:
+# Secrets (Firebase Admin service account, Discord OAuth, Telegram) are
+# NOT set here. Set them via Cloudflare Dashboard → Settings →
+# Variables and Secrets (mark as "Secret"), or with:
 #   npx wrangler secret put FIREBASE_PROJECT_ID
 #   npx wrangler secret put FIREBASE_CLIENT_EMAIL
 #   npx wrangler secret put FIREBASE_PRIVATE_KEY
+#   npx wrangler secret put DISCORD_CLIENT_ID
+#   npx wrangler secret put DISCORD_CLIENT_SECRET
+#   npx wrangler secret put TELEGRAM_BOT_TOKEN      (optional)
+#   npx wrangler secret put TELEGRAM_CHAT_ID         (optional)
 # They then become available as env.FIREBASE_PROJECT_ID etc. in src/index.js.
 # Never put real secret values in this file — it's fine to commit to GitHub,
-# secrets set via `wrangler secret put` are not.
+# secrets set via the dashboard/CLI are not.
