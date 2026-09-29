@@ -1,0 +1,17 @@
+name = "infradev-api"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# Allowed origins for CORS — the frontend(s) that may call this API.
+# Add your Cloudflare Pages URL and, later, your custom domain here.
+[vars]
+ALLOWED_ORIGINS = "https://infradev.pages.dev,http://localhost:8788"
+
+# Secrets (Firebase Admin service account, etc.) are NOT set here.
+# Set them with:
+#   npx wrangler secret put FIREBASE_PROJECT_ID
+#   npx wrangler secret put FIREBASE_CLIENT_EMAIL
+#   npx wrangler secret put FIREBASE_PRIVATE_KEY
+# They then become available as env.FIREBASE_PROJECT_ID etc. in src/index.js.
+# Never put real secret values in this file — it's fine to commit to GitHub,
+# secrets set via `wrangler secret put` are not.
